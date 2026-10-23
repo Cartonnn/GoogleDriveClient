@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GoogleDriveClient.MainPage">
+
+    <Grid ColumnDefinitions="*,*" RowDefinitions="auto,auto,auto,auto,auto" ColumnSpacing="20" RowSpacing="10">
+        <Label Text="Sciezka do pliku " FontSize="25" Grid.ColumnSpan="2" Grid.Row="0" />
+        <Entry Placeholder="podaj sciezke do pliku" Text="{Binding Sciezka,Mode=TwoWay}"  Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Button Text="Dodaj Plik/Pliki" Clicked="DodajPliki" Grid.Column="0" Grid.Row="2"/>
+        <Button Text="Dodaj Folder"  Grid.Column="1" Grid.Row="2"/>
+        <Button Text="Dodaj do dysku" Grid.ColumnSpan="2" Grid.Row="3"/>
+        <Label Text="lista plikow i folderow dodana do dysku: &#10;" x:Name="ListaPlikowView"  Grid.ColumnSpan="2" Grid.Row="4" MinimumHeightRequest="300"/>
+        <CollectionView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Span Text=""  /> 
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+    </Grid>
+
+</ContentPage>
